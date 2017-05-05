@@ -4,5 +4,6 @@
   "undef": true,
   "globals": {
     "jQuery": true
-  }
+  },
+  "-W003": true
 }
