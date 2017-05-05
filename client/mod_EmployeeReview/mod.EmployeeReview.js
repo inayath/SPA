@@ -51,6 +51,6 @@ angular.module('mod.m161')
                    name: "Admin Page",
                    module: "EmployeeReview"
                }
-           })
+           });
 
-    }])
+    }]);
