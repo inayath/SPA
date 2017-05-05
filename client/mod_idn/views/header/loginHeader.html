@@ -1,0 +1,21 @@
+
+<md-toolbar class="md-tall io-login-header" ng-controller="loginHeaderCtrl">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="CodingLabs">
+            <img ng-src="{{logo}}">
+        </md-button>
+        <h2>
+      <span>NBOS App</span>
+    </h2>
+        <span flex></span>
+        <md-button ng-click="website()">
+            <div layout="row" layout-align="center center">
+                <i class="material-icons">public</i> &nbsp; Website
+            </div>
+        </md-button>
+        <md-button class="md-raised" aria-label="Learn More" ui-sref="idn.login">
+            Sign In
+        </md-button>
+    </div>
+</md-toolbar>
+

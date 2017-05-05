@@ -1,0 +1,83 @@
+<div layout="column" class="io-idn io-login">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'" id=""></nav>
+    <div layout="row" class="login-content-padding" layout-align="center center">
+        <md-content layout="row" layout-align="center center" class="io-login-container md-whiteframe-2dp" layout-padding="15px">
+            <form name="userForm" ng-submit="registerUser(userForm);" class="io-login-form">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First name</label>
+                        <input required name="firstName" ng-model="user.firstName" ng-pattern="/[a-zA-Z]/">
+                        <div ng-messages="userForm.firstName.$error">
+                            <div ng-message="['required', 'pattern']">
+                                But what would we call you?
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input required name="lastName" ng-model="user.lastName">
+                        <div ng-messages="userForm.lastName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="md-block" flex-gt-xs>
+                    <md-input-container class="md-block">
+                        <label>Username/Email</label>
+                        <input required name="email" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
+                        <div ng-messages="userForm.email.$error" role="alert">
+                            <div ng-message-exp="['required', 'pattern']">
+                                Your username must look like an e-mail address.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="md-block" flex-gt-xs>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input required type="password" name="userPassword" ng-model="user.password" minlength="8" />
+                        <div ng-messages="userForm.userPassword.$error" role="alert">
+                            <div ng-message-exp="['required', 'minlength']">
+                                Your password was required to have a minimum length of 8.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="userForm.$invalid || disabledRegister">Register</md-button>
+                    </md-button>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">- OR -</h2>
+                    <span flex></span>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-accent md-raised" ng-click="socialLogin('fb')">
+                        <md-icon md-svg-src="mod_idn/assets/icons/facebook.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-warn md-raised" ng-click="socialLogin('google')">
+                        <md-icon md-svg-src="mod_idn/assets/icons/googlePlus.svg"></md-icon>
+                    </md-button>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">Connect with Social accounts</h2>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">Already have an account? <md-button class="md-primary" ng-click="login()">click here</md-button></h2>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-primary" ui-sref="idn.forgot">Forgot Password?</md-button>
+                    <span flex></span>
+                </div>
+            </form>
+        </md-content>
+    </div>
+</div>

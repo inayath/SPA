@@ -1,0 +1,45 @@
+<!-- <div layout="column">
+    <section layout="row" flex>
+        <nav ui-view="nav"></nav>
+        <div layout="column" layout-fill>
+            <section ui-view="header"></section>
+            <md-content flex layout-padding class="nbos-bg">
+                <div ui-view></div>
+
+                <div flex></div>
+            </md-content>
+        </div>
+    </section>
+</div> -->
+
+<!--
+<div layout="column" flex>
+    <section ui-view="header" ></section>
+    <md-content flex class="nbos-bg" layout="column">
+        <nav ui-view="nav">
+        </nav>
+
+        <div flex>
+            <div ui-view></div>
+            <div flex></div>
+        </div>
+    </md-content>
+</div>
+-->
+
+<md-content layout="column" flex >
+    <section ui-view="header"></section>
+    <md-content layout="row" flex>
+        <nav ui-view="nav"></nav>
+        <md-content layout="column" flex class="nbos-bg">
+            <div flex layout="column">
+                <section flex="none">
+                    <div ui-view></div>
+                </section>
+                <div flex></div>
+                <div ui-view="footer"></div>
+            </div>
+        </md-content>
+    </md-content>
+
+</md-content>

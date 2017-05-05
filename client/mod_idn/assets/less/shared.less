@@ -1,0 +1,36 @@
+/*
+  Some Util Classes
+*/
+
+//Use this class to provide padding for the main content on a page for the fixed toolbar layout
+.main-content-padding{
+  padding-top: 64px;
+}
+
+.progressBar{
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  .md-container{
+    //background-color: #B3E5E7;
+    background-color: rgb(21,101,192);
+  }
+  .md-bar1{
+    background-color: rgb(255,171,64);
+  }
+  .md-bar2{
+    background-color: rgb(255,171,64);
+  }
+}
+
+.hideProgressbar {
+  display: none;
+}
+
+//for toasts
+md-toast {
+  z-index: 10000;
+  position: fixed;
+  top:70px !important;
+}

@@ -1,0 +1,23 @@
+{
+  "APP" :{
+    "appName" : "EmployeeReview",
+    "appOwner" : {
+      "name": "",
+      "email" : "",
+      "phone": "",
+      "logo": "",
+      "banner": ""
+    }
+  },
+
+  "MOD_IDN":{
+    "login_redirect" : "m161.dashboard",
+    "validate_email" : false
+    
+  },
+
+  "MOD_APP":{
+
+  }
+
+}

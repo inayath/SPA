@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Bower Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' type='text/css' media='all'/>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/appStyles.css">
+    
+    <meta name="google-signin-clientid" content="504012731896-rerpg50s2kgra2u0qcsvt59pvmcmetlk.apps.googleusercontent.com" />
+    <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login email" />
+    <meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+
+
+    <!-- App Styles -->
+    <!--<link rel="stylesheet" href="mod_idn/assets/css/styles.css">-->
+    <!--<link rel="stylesheet" href="assets/css/appStyles.css">-->
+
+    <!-- favicon -->
+
+</head>
+<body ng-app="clientApp" layout="column" flex>
+<div id="subDomain" hide><%= subDomain %></div>
+<div id="ENV" hide><%= ENV %></div>
+<div id="appName" hide></div>
+
+
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<div ui-view ng-controller="AppCtrl" layout="cloumn" flex></div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    (function () {
+        /*
+         vrathore: The angular material seems to look a little too big. Untill srikanth reduces the size for it all,
+         */
+        //document.body.style.zoom = "90%";
+    })();
+</script>
+
+<!-- ANGULARJS Libraries-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<!--Cookies-->
+<!--<script src="bower_components/angular-cookie/angular-cookie.min.js"></script>-->
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<!-- angular material requirements-->
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+<!--loading bar-->
+<script type='text/javascript' src='bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
+<!--underscore-->
+<script src="bower_components/underscore/underscore.js"></script>
+
+<!--file Upload-->
+<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+
+<!-- APP -->
+<script src="client.js"></script>
+
+<!-- CONFIGURATIONS LEVEL -->
+<!-- config -->
+<script src="app_config/app.config.js"></script>
+<script src="app_config/main/app.service.js"></script>
+<script src="app_config/main/app.ctrl.js"></script>
+<!-- layout -->
+<script src="app_config/layout/app.layout.js"></script>
+<script src="app_config/layout/layoutCtrl.js"></script>
+<script src="app_config/layout/layoutService.js"></script>
+<!-- theme -->
+<script src="app_config/theme/app.theme.js"></script>
+<!--primaryPage-->
+<script src="app_config/firstPage/firstPageCtrl.js"></script>
+<!-- common -->
+<script src="app_config/common/stateService.js"></script>
+
+
+<!-- MODULE NBOS -->
+<script src="mod_nbos/mod.nbos.js"></script>
+<!-- alert component -->
+<script src="mod_nbos/alert/alertService.js"></script>
+
+<!-- MODULE IDN -->
+<script src="mod_idn/mod.idn.js"></script>
+<!-- mod_IDN -->
+<script src="mod_idn/scripts/idnConstants.js"></script>
+
+
+<!-- SERVICES -->
+<script src="mod_idn/scripts/services/SessionService.js"></script>
+<script src="mod_idn/views/dashboard/RolesService.js"></script>
+<script src="mod_idn/views/dashboard/UserService.js"></script>
+<script src="mod_idn/scripts/services/shared/alertService.js"></script>
+<script src="mod_idn/scripts/services/registration/registerService.js"></script>
+<script src="mod_idn/scripts/services/registration/loginService.js"></script>
+
+<!-- CONTROLLERS -->
+<script src="mod_idn/views/dashboard/idn.dashboardCtrl.js"></script>
+<script src="mod_idn/views/header/idn.loginHeaderCtrl.js"></script>
+<script src="mod_idn/scripts/controllers/registration/loginCtrl.js"></script>
+<script src="mod_idn/scripts/controllers/registration/registerCtrl.js"></script>
+<script src="mod_idn/scripts/controllers/registration/registerSuccessCtrl.js"></script>
+<script src="mod_idn/views/menu/idn.headerCtrl.js"></script>
+<script src="mod_idn/views/menu/idn.navCtrl.js"></script>
+<script src="mod_idn/views/profile/idn.profileCtrl.js"></script>
+<script src="mod_idn/views/settings/idn.settingsCtrl.js"></script>
+
+<!-- SOCIAL LOGIN -->
+<script src="mod_idn/scripts/services/social/SocialLoginService.js"></script>
+<script src="mod_idn/scripts/services/social/FBService.js"></script>
+<script src="mod_idn/scripts/services/social/GoogleService.js"></script>
+<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+
+
+<!-- YOUR APP-->
+<script src="mod_EmployeeReview/mod.EmployeeReview.js"></script>
+<script src="mod_EmployeeReview/views/admin/EmployeeReview.adminCtrl.js"></script>
+<script src="mod_EmployeeReview/views/menu/EmployeeReview.headerCtrl.js"></script>
+
+
+</body>
+</html>

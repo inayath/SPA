@@ -1,0 +1,18 @@
+<md-menu md-offset="0 30" md-position-mode="target-right target" ng-controller="EmployeeReviewHeaderCtrl">
+
+    <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+        <!--<md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>-->
+        <i md-menu-origin class="material-icons">compare_arrows</i>
+    </md-button>
+    <md-menu-content width="4">
+        <md-menu-item >
+            <md-button>
+                <div layout="row" layout-align="center center">
+                    <i class="material-icons">code</i>
+                    &nbsp;&nbsp;&nbsp;
+                    <p>Profile</p>
+                </div>
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

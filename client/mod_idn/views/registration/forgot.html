@@ -1,0 +1,41 @@
+<div layout="column"  ng-controller="LoginCtrl">
+  <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'"></nav>
+
+  <div layout="row"  layout-padding class="login-content-padding">
+
+    <div flex layout="column"></div>
+
+    <div style=" width: 500px;" layout="row" layout-align="center center">
+
+      <section md-whiteframe="1" flex>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 class="md-flex">Forgot Password?</h2>
+          </div>
+        </md-toolbar>
+        <md-content layout-padding>
+          <form name="projectForm">
+            <md-input-container class="md-block">
+              <label>Email</label>
+              <input required name="userName" ng-model="project.userName" ng-pattern="/^.+@.+\..+$/">
+              <div ng-messages="projectForm.userName.$error" role="alert">
+                <div ng-message-exp="['required', 'pattern']">
+                  This must like an e-mail address.
+                </div>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <md-button class="md-raised md-primary" style="width: 100%;">Reset Password</md-button>
+            </md-input-container>
+
+          </form>
+
+        </md-content>
+      </section>
+
+    </div>
+
+    <div flex layout="column"></div>
+  </div>
+</div>

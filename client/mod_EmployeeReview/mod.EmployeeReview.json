@@ -1,0 +1,26 @@
+{
+    "app": {
+        "bower": {
+            "bootstrap": "^3.3.6"
+        },
+        "bower_css": [],
+        "bower_js": [],
+        "js": [
+            "<script src='mod_EmployeeReview/mod.EmployeeReview.js'></script>",
+            "<script src='mod_EmployeeReview/views/dashboard/EmployeeReview.dashboardCtrl.js'></script>",
+            "<script src='mod_EmployeeReview/views/menu/EmployeeReview.headerCtrl.js'></script>"
+        ]
+    },
+    "admin": {
+        "bower": {
+            "moment": "^2.14.1"
+        },
+        "bower_css": [],
+        "bower_js": [],
+        "js": [
+            "<script src='mod_EmployeeReview/mod.EmployeeReview.js'></script>",
+            "<script src='mod_EmployeeReview/views/admin/EmployeeReview.adminCtrl.js'></script>",
+            "<script src='mod_EmployeeReview/views/menu/EmployeeReview.headerCtrl.js'></script>"
+        ]
+    }
+}

@@ -1,0 +1,183 @@
+/*
+  Some Util Classes
+*/
+.main-content-padding {
+  padding-top: 64px;
+}
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.progressBar .md-container {
+  background-color: #1565c0;
+}
+.progressBar .md-bar1 {
+  background-color: #ffab40;
+}
+.progressBar .md-bar2 {
+  background-color: #ffab40;
+}
+.hideProgressbar {
+  display: none;
+}
+md-toast {
+  z-index: 10000;
+  position: fixed;
+  top: 70px !important;
+}
+.loginHeader .md-button.md-icon-button {
+  margin: 0px;
+  padding: 0px;
+  width: 65px;
+  height: 65px;
+}
+.loginHeader .md-button md-icon {
+  width: 65px;
+  height: 65px;
+}
+.loginContainer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.fixed-toolbar {
+  z-index: 999;
+}
+.fixed-toolbar md-toolbar {
+  position: fixed;
+}
+.login-content-padding {
+  padding-top: 125px;
+}
+img.logoparts {
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+}
+img.logoparts:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.fbBtn {
+  background-color: rgba(109, 132, 180, 0.96) !important;
+}
+.fbBtn:not([disabled]):hover {
+  background-color: rgba(109, 132, 180, 0.96) !important;
+}
+.gpBtn {
+  background-color: rgba(211, 72, 54, 0.96) !important;
+}
+.gpBtn:not([disabled]):hover {
+  background-color: rgba(211, 72, 54, 0.96) !important;
+}
+div.codingGears {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 95px;
+}
+div.rotateGears {
+  padding-bottom: 25px;
+}
+img.logopart {
+  display: block;
+  position: absolute;
+  -webkit-animation: barrelRoll 2s infinite linear;
+  -webkit-animation-play-state: paused;
+  animation: barrelRoll 2s infinite linear;
+  animation-play-state: paused;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+}
+img.logopart1 {
+  left: 0;
+}
+img.logopart2 {
+  left: 95px;
+  -webkit-animation-name: invertBarrelRoll;
+  animation-name: invertBarrelRoll;
+}
+img.logopart3 {
+  left: 0;
+  -webkit-animation-name: invertBarrelRoll;
+  animation-name: invertBarrelRoll;
+}
+img.logopart4 {
+  left: 95px;
+}
+div.rotateGears:hover img.logopart {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+@-webkit-keyframes barrelRoll {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes invertBarrelRoll {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes barrelRoll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes invertBarrelRoll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.registration .infoTabs md-tabs-wrapper {
+  display: none;
+}
+.registration .subdomainText h2 {
+  margin-top: -5px;
+}
+.registration .registerOrgForm md-tabs-wrapper {
+  display: none;
+}
+.registration .hint {
+  font-size: 12px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  color: grey;
+}
+.registration .edit-icon {
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.registration .edit-button {
+  height: 30px;
+  margin-top: 13px;
+  color: white;
+}
+.registration .redCancel {
+  color: #dd2c00;
+}
+.registration .subdomainError {
+  color: #dd2c00;
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  opacity: 1;
+  margin-top: -20px;
+  margin-left: 13px;
+  display: block;
+}

@@ -1,0 +1,115 @@
+.loginContainer{
+  padding-top: 50px;
+  padding-bottom:50px;
+}
+
+.fixed-toolbar {
+  z-index: 999;
+  md-toolbar{
+    position: fixed;
+  }
+}
+
+.login-content-padding{
+  padding-top: 125px;
+}
+
+img.logoparts {
+  //border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+img.logoparts:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.fbBtn {
+  background-color: rgba(109, 132, 180, 0.96) !important;
+}
+.fbBtn:not([disabled]):hover {
+  background-color: rgba(109, 132, 180, 0.96) !important;
+}
+
+.gpBtn {
+  background-color: rgba(211, 72, 54, 0.96) !important;
+}
+.gpBtn:not([disabled]):hover {
+  background-color: rgba(211, 72, 54, 0.96) !important;
+}
+
+
+
+//JUST FUNNING AROUND
+
+div.codingGears{
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 95px;
+}
+
+div.rotateGears{
+  padding-bottom: 25px;
+}
+
+
+img.logopart {
+  display: block;
+  position: absolute;
+  -webkit-animation: barrelRoll 2s infinite linear;
+  -webkit-animation-play-state: paused;
+  animation: barrelRoll 2s infinite linear;
+  animation-play-state: paused;
+
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+
+
+
+img.logopart1{
+  left:0;
+
+}
+img.logopart2{
+  left: 95px;
+  -webkit-animation-name: invertBarrelRoll;
+  animation-name: invertBarrelRoll;
+}
+img.logopart3{
+  left:0;
+  -webkit-animation-name: invertBarrelRoll;
+  animation-name: invertBarrelRoll;
+}
+img.logopart4{
+  left: 95px;
+
+}
+
+div.rotateGears:hover  img.logopart {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes barrelRoll {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes invertBarrelRoll {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-360deg); }
+}
+
+@keyframes barrelRoll {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes invertBarrelRoll {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+//FUNNING AROUND ENDS HERE

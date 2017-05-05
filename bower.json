@@ -1,0 +1,29 @@
+{
+  "name": "consoleproject",
+  "authors": [
+    "NBOS"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "angular-material": "1.1.0-rc.5",
+    "angular-messages": "^1.5.7",
+    "underscore": "^1.8.3",
+    "ng-file-upload": "^12.0.4",
+    "jquery": "^3.0.0",
+    "angular-ui-router": "^0.3.1",
+    "angular-local-storage": "^0.2.7",
+    "angular-loading-bar": "^0.9.0"
+  }
+}

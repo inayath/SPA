@@ -1,0 +1,18 @@
+<div flex layout="column" ng-controller="RegisterSuccessCtrl">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'" id=""></nav>
+
+    <div layout="column" class="login-content-padding">
+
+        <div layout="column" layout-align="center center">
+            <h2 class="md-display-3">
+                Hurray! <span class="md-display-2">Registration Successful!</span>
+            </h2>
+            <p class="md-headline" ng-show="showValidateEmail">
+                Please check verify your email before accessing the app.
+            </p>
+            <md-button ng-hide="showValidateEmail" class="md-raised md-accent" ui-sref="idn.login">Login</md-button>
+        </div>
+
+    </div>
+
+</div>

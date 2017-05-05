@@ -1,0 +1,62 @@
+<div layout="column" ng-controller="LoginCtrl" class="io-idn io-login">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'"></nav>
+    <div layout="row" class="login-content-padding" layout-align="center center">
+        <md-content layout="row" layout-align="center center" class="io-login-container md-whiteframe-2dp" layout-padding="15px">
+            <form name="loginForm" ng-submit="validateuser(loginForm);" class="io-login-form">
+                <md-input-container class="md-block">
+                    <label>Username/Email</label>
+                    <input required name="userName" ng-model="user.username">
+                    <!--<input required name="userName" ng-model="user.username" ng-pattern="/^.+@.+\..+$/">-->
+                    <div ng-messages="loginForm.userName.$error" role="alert">
+                        <div ng-message-exp="['required', 'pattern']">
+                            Your username must look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input required type="password" name="userPassword" ng-model="user.password" minlength="8" />
+                    <div ng-messages="loginForm.userPassword.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength']">
+                            Your password was required to have a minimum length of 8.
+                        </div>
+                    </div>
+                </md-input-container>
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-raised md-accent" type="submit" ng-disabled="loginForm.$invalid || disableLogin">Sign In
+                    </md-button>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">- OR -</h2>
+                    <span flex></span>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-accent md-raised" ng-click="socialLogin('fb')">
+                        <md-icon md-svg-src="mod_idn/assets/icons/facebook.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-warn md-raised" ng-click="socialLogin('google')">
+                        <md-icon md-svg-src="mod_idn/assets/icons/googlePlus.svg"></md-icon>
+                    </md-button>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">Connect with Social accounts</h2>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <h2 class="md-subhead">Don't have an account? <md-button class="md-primary" ng-click="register()">click here</md-button></h2>
+                    <span flex></span>
+                </div>
+                <div layout="row">
+                    <span flex></span>
+                    <md-button class="md-primary" ui-sref="idn.forgot">Forgot Password?</md-button>
+                    <span flex></span>
+                </div>
+            </form>
+        </md-content>
+    </div>
+</div>
