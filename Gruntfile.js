@@ -20,9 +20,11 @@ module.exports = function (grunt) {
             ignore_warning: {
                 options: {
                     '-W015': true,
+                    '-W003': true,
+                    reporter: require("jshint-junit-reporter"),
                     reporterOutput: 'jshint.xml'
                 },
-                src: 'client/**/*.js',
+                filesSrc: 'client/mod_EmployeeReview/*.js',
                 filter: 'isFile'
             }
         },
