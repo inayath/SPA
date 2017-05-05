@@ -17,16 +17,15 @@ module.exports = function (grunt) {
             },
         },
         jshint: {
-            ignore_warning: {
+
                 options: {
                     '-W015': true,
-                    '-W003': true,
                     reporter: require("jshint-junit-reporter"),
                     reporterOutput: 'jshint.xml'
                 },
-                filesSrc: 'client/mod_EmployeeReview/*.js',
-                filter: 'isFile'
-            }
+                src: ['client/mod_EmployeeReview/*.js']
+
+
         },
         // Run some tasks in parallel to speed up the build process
         concurrent: {

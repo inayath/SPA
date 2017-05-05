@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite name="jshint" tests="0" failures="0" errors="0">
-	<testcase name="jshint" />
+<testsuite name="jshint" tests="1" failures="2" errors="0">
+	<testcase name="client/mod_EmployeeReview/mod.EmployeeReview.js">
+		<failure message="2 JSHint Failures">
+1. line 54, char 14: Missing semicolon.
+2. line 56, char 8: Missing semicolon.
+		</failure>
+	</testcase>
 </testsuite>
