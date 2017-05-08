@@ -31,11 +31,11 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'jenkins'],
+    reporters: ['progress', 'jenkins', 'dots', 'junit'],
 
     // example configuration
-    jenkinsReporter: {
-        outputFile: 'test-results.xml',
+      junitReporter: {
+        outputFile: 'karma-test-results.xml',
         suite: 'foobar',                 // this will be mapped to the package
         classnameSuffix: 'browser-test'
     },
@@ -59,7 +59,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
