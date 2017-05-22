@@ -23,7 +23,7 @@ module.exports = function (grunt) {
                     reporter: require("jshint-junit-reporter"),
                     reporterOutput: 'jshint.xml'
                 },
-                src: ['client/**/*.js']
+                src: ['client/mod_EmployeeReview/**/*.js']
 
 
         },

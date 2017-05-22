@@ -9,12 +9,11 @@ angular.module('clientApp', [
         'angular-loading-bar',
         'ngMessages',
         'underscore',
-        
-
         'app.config',
         'mod.nbos',
         'mod.idn',
         'mod.m161',
+    'md.data.table'
 ])
 
 angular.module('clientApp')

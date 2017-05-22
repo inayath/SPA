@@ -1,0 +1,54 @@
+<div layout-padding ng-cloak class="md-inline-form" style="width: 600px;">
+    <md-dialog md-theme="default" class="_md md-default-theme _md-transition-in" role="dialog">
+        <form name="frm">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 ng-hide="survey.survey_id">Add Survey</h2>
+                    <h2 ng-show="survey.survey_id">Edit Survey</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="closeDialog()">
+                        <md-icon aria-label="Close dialog">close</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content class="md-dialog-content" role="document" tabindex="-1">
+                <md-input-container class="md-block">
+                    <label>Survey Name</label>
+                    <input name="survey_name" ng-model="survey.name" aria-label="Survey Name" required />
+                    <div class="errors" ng-messages="frm.name.$error" ng-if="frm.$dirty">
+                        <div ng-message="required">Plase enter Survey Name</div>
+                        <div ng-message="server">{{ errors.name }}</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Survey Description</label>
+                    <textarea name="survey_description" ng-model="survey.description" aria-label="Survey Description" required></textarea>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Template</label>
+                    <md-select name="survery_template" ng-model="survey.template" aria-label="Template ID" required>
+                        <md-option ng-repeat="template in templates" value="{{template.name}}">
+                            {{template.name}}
+                        </md-option>
+                    </md-select>
+                    <div class="errors" ng-messages="frm.survery_template.$error" ng-if="frm.$dirty">
+                        <div ng-message="required">Required</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <md-checkbox ng-model="survey.status" aria-label="Finished?">
+                        Is Survey approved?
+                    </md-checkbox>
+                </md-input-container>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <button class="md-primary md-button ng-scope" type="button" ng-click="closeDialog();">
+                    <span class="ng-binding ng-scope">Close</span>
+                </button>
+                <button class="md-primary md-button" ng-click="saveDialog(survey);" ng-disabled="frm.$invalid">
+                    <span class="ng-binding ng-scope">Submit</span>
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</div>

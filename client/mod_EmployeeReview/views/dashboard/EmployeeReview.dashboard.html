@@ -1,8 +1,42 @@
-<section ng-controller="EmployeeReviewDashboardCtrl" layout-padding>
+<section ng-controller="EmployeeReviewDashboardCtrl" layout-padding
+      ng-cloak>
     <md-content layout-padding class="md-whiteframe-1dp">
-        <p class="md-body-2"></p>
-        <p class="md-body-1">
-            You can start building your pages in the <code>mod_EmployeeReview</code> folder. Please keep track of all files in the <code>mod.EmployeeReview.json</code> file to enable an easier transition when the core code is updated or if you chose to further customize the app.
-        </p>
+        <h2>Surveys</h2>
+        <div layout="row" layout-align="end center">
+            <button class="md-fab md-button md-ink-ripple" type="button" ng-click="addSurvey();">
+                <md-icon class="ng-scope" aria-hidden="true">add</md-icon>
+                <div class="md-ripple-container"></div>
+            </button>
+        </div>
+
+    </md-content>
+    <md-content layout="column" flex>
+        <md-table-container>
+            <table md-table>
+                <thead md-head md-order="query.order">
+                <tr md-row>
+                    <th md-column ng-repeat="column in autocolumn" md-order-by="{{column.name}}">
+                        <span>{{column.display}}</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="row in datatable.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                    <td md-cell>{{row.name}}</td>
+                    <td md-cell>{{row.description}}</td>
+                    <td md-cell>{{row.template}}</td>
+                    <td md-cell>
+                        <md-icon ng-if="row.status" aria-label="View Members" class="md-secondary md-hue-3">check_circle</md-icon>
+                        <md-icon ng-if="!row.status" aria-label="View Members" class="md-secondary md-hue-3">remove_circle</md-icon>
+                    </td>
+                    <td md-cell>
+                         <md-icon ng-click="viewMembers($index, $event)" aria-label="View Members" class="md-secondary md-hue-3">people</md-icon>
+                        <md-icon ng-click="editSurvey($index, $event)" aria-label="Edit Company" class="md-secondary md-hue-3">mode_edit</md-icon>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{datatable.count}}" md-page-select="options.pageSelect"></md-table-pagination>
     </md-content>
 </section>
