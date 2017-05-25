@@ -17,7 +17,8 @@ angular.module('app.config')
         SCOPE: '',
         APP_SESSION_KEY: 'THIS_SHOULD_BE_RANDOM_GENERATED_',
         APP_LOGO : '',
-        APP_BANNER:''
+        APP_BANNER:'',
+        REVIEW_API_URL:'http://simplecheer.labs.nbos.io/'
     })
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {

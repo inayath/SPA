@@ -16,7 +16,7 @@
                     <label>Survey Name</label>
                     <input name="survey_name" ng-model="survey.name" aria-label="Survey Name" required />
                     <div class="errors" ng-messages="frm.name.$error" ng-if="frm.$dirty">
-                        <div ng-message="required">Plase enter Survey Name</div>
+                        <div ng-message="required">Please enter Survey Name</div>
                         <div ng-message="server">{{ errors.name }}</div>
                     </div>
                 </md-input-container>
@@ -26,7 +26,7 @@
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Template</label>
-                    <md-select name="survery_template" ng-model="survey.template" aria-label="Template ID" required>
+                    <md-select name="survery_template" ng-model="survey.template_id" aria-label="Template ID" required>
                         <md-option ng-repeat="template in templates" value="{{template.name}}">
                             {{template.name}}
                         </md-option>

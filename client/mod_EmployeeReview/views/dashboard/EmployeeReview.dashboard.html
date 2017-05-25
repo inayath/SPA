@@ -24,14 +24,14 @@
                 <tr md-row ng-repeat="row in datatable.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                     <td md-cell>{{row.name}}</td>
                     <td md-cell>{{row.description}}</td>
-                    <td md-cell>{{row.template}}</td>
+                    <td md-cell ng-click="showTemplate(row.template_id)">{{row.template_id}}</td>
                     <td md-cell>
                         <md-icon ng-if="row.status" aria-label="View Members" class="md-secondary md-hue-3">check_circle</md-icon>
                         <md-icon ng-if="!row.status" aria-label="View Members" class="md-secondary md-hue-3">remove_circle</md-icon>
                     </td>
                     <td md-cell>
                          <md-icon ng-click="viewMembers($index, $event)" aria-label="View Members" class="md-secondary md-hue-3">people</md-icon>
-                        <md-icon ng-click="editSurvey($index, $event)" aria-label="Edit Company" class="md-secondary md-hue-3">mode_edit</md-icon>
+                        <md-icon ng-click="editSurvey(row.id)" aria-label="Edit Company" class="md-secondary md-hue-3">mode_edit</md-icon>
                     </td>
                 </tr>
                 </tbody>
@@ -39,4 +39,5 @@
         </md-table-container>
         <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{datatable.count}}" md-page-select="options.pageSelect"></md-table-pagination>
     </md-content>
+
 </section>

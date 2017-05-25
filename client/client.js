@@ -13,12 +13,13 @@ angular.module('clientApp', [
         'mod.nbos',
         'mod.idn',
         'mod.m161',
-    'md.data.table'
+    'md.data.table',
+    'schemaForm'
 ])
 
 angular.module('clientApp')
 .constant('CLIENT_CONFIG',{
-        CLIENT_ID: '7c2c712e-7f06-44cb-94c5-9576430681de',
-        CLIENT_SECRET: 'client-review-api',
+        CLIENT_ID: '8860c713-35ad-492f-83d5-badb5ec0acbf',
+        CLIENT_SECRET: 'review-client-secret',
         CLIENT_DOMAIN : 'http://localhost:9001'
 })
