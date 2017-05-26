@@ -1,7 +1,10 @@
 /**
  * Created by sharief on 5/24/17.
  */
-'use strict';
+(function () {
+    'use strict';
+    // this function is strict...
+}());
 
 angular.module('mod.m161')
     .factory('SurveyService', ['SurveyFactory', '$q', 'APP_CONSTANTS', function(SurveyFactory, $q, APP_CONSTANTS){

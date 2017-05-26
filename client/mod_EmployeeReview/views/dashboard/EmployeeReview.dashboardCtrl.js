@@ -114,11 +114,11 @@ angular.module('mod.m161')
             scope: $scope,
             preserveScope: true,
             locals:{
-                "Survey": _.find($scope.surveys, function (survey) { return survey.id === id})
+                "Survey": _.find($scope.surveys, function (survey) { return survey.id === id;})
             }
         })
             .then(function(data) {
-                var index = _.find($scope.surveys, function (survey) { return survey.id === id});
+                var index = _.find($scope.surveys, function (survey) { return survey.id === id;});
                 $scope.surveys[index] = $scope.survey;
             }, function() {
                 $scope.status = 'You cancelled the dialog.';

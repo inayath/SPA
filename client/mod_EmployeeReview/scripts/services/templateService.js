@@ -1,7 +1,10 @@
 /**
  * Created by sharief on 5/24/17.
  */
-'use strict';
+(function () {
+    'use strict';
+    // this function is strict...
+}());
 
 angular.module('mod.m161')
     .factory('TemplateService', ['TemplateFactory', '$q', 'APP_CONSTANTS', function(TemplateFactory, $q, APP_CONSTANTS){
@@ -31,7 +34,7 @@ angular.module('mod.m161')
         factory.getAllTemplates = function(){
             var bearer = "Bearer " + SessionService.getStoredUserToken();
 
-            return $resource(APP_CONSTANTS.REVIEW_API_URL + 'api/reviews/v0/survey/templates', {}, {
+            return $resource(APP_CONSTANTS.REVIEW_API_URL + 'api/reviews/v0/templates', {}, {
                 'get':{
                     method : 'GET',
                     isArray : true,
