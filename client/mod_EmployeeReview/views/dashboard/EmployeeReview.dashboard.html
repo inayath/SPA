@@ -30,7 +30,7 @@
                         <md-icon ng-if="!row.status" aria-label="View Members" class="md-secondary md-hue-3">remove_circle</md-icon>
                     </td>
                     <td md-cell>
-                         <a href="#!/EmployeeReview/survey/{{row.id}}/assign"> <md-icon ng-click="viewMembers($index, $event)" aria-label="View Members" class="md-secondary md-hue-3">people</md-icon></a>
+                          <md-icon ng-click="showAssignPage(row.id)" aria-label="View Members" class="md-secondary md-hue-3">people</md-icon>
                         <md-icon ng-click="editSurvey(row.id)" aria-label="Edit Company" class="md-secondary md-hue-3">mode_edit</md-icon>
                     </td
                 </tr>

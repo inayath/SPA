@@ -23,8 +23,8 @@
                 <md-autocomplete
                         ng-disabled="ctrl.isDisabled"
                         md-no-cache="ctrl.noCache"
-                         md-search-text="survey.searchText"
-
+                        md-search-text="formObject.searchText"
+                        md-selected-item="formObject.reviewer"
                         md-items="item in querySearch(survey.searchText)"
                         md-item-text="item.name"
                         md-min-length="0"
@@ -66,10 +66,10 @@
                 </div>
                 <div>
 
-                    <md-datepicker ng-model="survey.startDate" md-placeholder="Start date"
+                    <md-datepicker ng-model="survey.start_date" md-placeholder="Start date"
                                    md-min-date="survey.minDate" md-max-date="survey.maxDate"></md-datepicker>
 
-                    <md-datepicker ng-model="survey.endDate" md-placeholder="End date"
+                    <md-datepicker ng-model="survey.end_date" md-placeholder="End date"
                                    md-min-date="survey.minDate" md-max-date="survey.maxDate"></md-datepicker>
 
                 </div>
@@ -86,8 +86,8 @@
                         </div>
                     </md-input-container>
                     <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-click="submitForm()" class="md-raised md-primary">Publish</md-button>
-                        <md-button ng-click="submitForm()" class="md-raised md-primary">Save as Draft</md-button>
+                        <md-button ng-click="assignSurvey(true)" class="md-raised md-primary">Publish</md-button>
+                        <md-button ng-click="assignSurvey(false)" class="md-raised md-primary">Save as Draft</md-button>
                     </md-card-actions>
                 </div>
          </div>

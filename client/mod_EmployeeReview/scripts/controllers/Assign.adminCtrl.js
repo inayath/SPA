@@ -4,17 +4,17 @@
 }());
 
 angular.module('mod.m161')
-    .controller('SurveyAssignCtrl', ['$scope', 'UserService', '$mdDialog', 'SurveyService', 'CustomerService','$timeout', function($scope, UserService, $mdDialog, SurveyService, CustomerService, $timeout){
+    .controller('SurveyAssignCtrl', ['$scope', '$stateParams' ,'UserService', '$mdDialog', 'SurveyService', 'CustomerService','$timeout', function($scope, $stateParams, UserService, $mdDialog, SurveyService, CustomerService, $timeout){
 
         $scope.customers = [];
         $scope.customerContacts = [];
         $scope.customerEmployees = [];
+        $scope.formObject = {reviewer:null};
 
         var init = function(){
            CustomerService.getAllCustomers().then(function (data){
                 $scope.customers = data;
             });
-
         };
         init();
         $scope.getCustomerData = function(){
@@ -27,7 +27,7 @@ angular.module('mod.m161')
             });
         }
 
-        $scope.survey = {name:'Care QA Team Survey'};
+        $scope.survey = {id: $stateParams.id, name:'Care QA Team Survey'};
 
         $scope.querySearch = function(query) {
             var results = query && $scope.customerContacts > 0 ? $scope.customerContacts.filter( createFilterFor(query) ) : $scope.customerContacts,
@@ -52,7 +52,15 @@ angular.module('mod.m161')
 
         }
         $scope.selectedEmployees = function () {
-            $scope.survey.employess = $filter('filter')($scope.customerEmployees, {checked: true});
+            var selectedEmployess = _.filter($scope.customerEmployees, {checked: true});
+            $scope.survey.reviewee_ids = _.pluck(selectedEmployess, "id");
+        }
+        $scope.assignSurvey = function (status) {
+            $scope.survey.reviewer_id = $scope.formObject.reviewer.id || null;
+            $scope.survey.status = status;
+            SurveyService.assignSurvey($scope.survey).then(function (data){
+                $scope.customers = data;
+            });
         }
 
 

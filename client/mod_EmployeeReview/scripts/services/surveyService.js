@@ -50,6 +50,18 @@ angular.module('mod.m161')
 
             return deferred.promise;
         };
+        factory.assignSurvey = function(paramObj){
+            var deferred = $q.defer();
+
+            SurveyFactory.assignSurvey(paramObj.id).survey(paramObj, function(success){
+                factory.survey = success;
+                deferred.resolve(success);
+            }, function(error){
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        };
 
         return factory;
     }])
@@ -97,6 +109,18 @@ angular.module('mod.m161')
                 }
             });
         };
+        factory.assignSurvey = function(id) {
+            var bearer = "Bearer " + SessionService.getStoredUserToken();
+            return $resource(APP_CONSTANTS.REVIEW_API_URL + 'api/reviews/v0/surveys/'+id+'/schedules', {}, {
+                'survey':{
+                    method : 'POST',
+                    headers: {
+                        "Authorization" : bearer
+                    }
+                }
+            });
+        };
+
 
         return factory;
     }]);

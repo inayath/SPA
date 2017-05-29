@@ -5,7 +5,7 @@
 
 angular.module('mod.m161')
 .controller('EmployeeReviewDashboardCtrl',
-    ['$scope', 'UserService', '$mdDialog', 'SurveyService', 'TemplateService', function($scope, UserService, $mdDialog, SurveyService, TemplateService){
+    ['$scope', '$state', 'UserService', '$mdDialog', 'SurveyService', 'TemplateService', function($scope, $state, UserService, $mdDialog, SurveyService, TemplateService){
 
     $scope.message = "Hello from your module Dashboard";
     $scope.survey = {};
@@ -125,6 +125,10 @@ angular.module('mod.m161')
             }, function() {
                 $scope.status = 'You cancelled the dialog.';
             });
+    };
+    $scope.showAssignPage = function (id) {
+        SurveyService.survey = $scope.survey;
+        $state.go('m161.surveyAssign', {id: id})
     };
     $scope.showTemplate = function(templateSlug){
         $mdDialog.show({
