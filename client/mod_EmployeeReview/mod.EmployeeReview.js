@@ -38,7 +38,18 @@ angular.module('mod.m161')
                 }
 
             })
+            .state('m161.surveyAssign', {
+            url: '/survey/:id/assign',
+            templateUrl: "mod_EmployeeReview/views/surveys/assign.admin.html",
+            data: {
+                type: 'home',
 
+                admin : true,
+                disabled : false,
+                name: "Admin Page",
+                module: "EmployeeReview"
+            }
+        })
             //FOR APP ADMIN
            .state('m161.admin', {
                url: '/admin',

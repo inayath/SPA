@@ -4,7 +4,8 @@
 }());
 
 angular.module('mod.m161')
-.controller('EmployeeReviewDashboardCtrl', ['$scope', 'UserService', '$mdDialog', 'SurveyService', 'TemplateService', function($scope, UserService, $mdDialog, SurveyService, TemplateService){
+.controller('EmployeeReviewDashboardCtrl',
+    ['$scope', 'UserService', '$mdDialog', 'SurveyService', 'TemplateService', function($scope, UserService, $mdDialog, SurveyService, TemplateService){
 
     $scope.message = "Hello from your module Dashboard";
     $scope.survey = {};
@@ -179,6 +180,4 @@ angular.module('mod.m161')
                 $scope.status = 'You cancelled the dialog.';
             });
     };
-
-
 }]);

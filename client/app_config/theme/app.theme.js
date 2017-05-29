@@ -8,12 +8,12 @@ angular.module('app.theme')
         //Angular Material Theme Configuration
         $mdThemingProvider.theme('default')
             .primaryPalette('teal')
-            .accentPalette('blue')
+            .accentPalette('orange')
             .warnPalette('red');
 
         $mdThemingProvider.theme('docs-dark', 'default')
             .primaryPalette('yellow')
-            .accentPalette('green')
+            .accentPalette('orange')
             .warnPalette('red')
             .dark();
 

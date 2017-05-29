@@ -1,0 +1,98 @@
+<div ng-controller="SurveyAssignCtrl" layout="column" ng-cloak class="md-inline-form">
+    <md-card layout-align="center center">
+
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Assign Survey to Reviewer and  Employees </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+
+        <form name="userForm">
+            <div layout="column">
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block md-input-invalid">
+                        <label>Clients</label>
+                        <md-select ng-change="getCustomerData()" ng-model="survey.customer" placeholder="Select a Client">
+                            <md-option ng-value="opt.id" ng-repeat="opt in customers">{{ opt.name }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                <md-autocomplete
+                        ng-disabled="ctrl.isDisabled"
+                        md-no-cache="ctrl.noCache"
+                         md-search-text="survey.searchText"
+
+                        md-items="item in querySearch(survey.searchText)"
+                        md-item-text="item.name"
+                        md-min-length="0"
+                        placeholder="Pick an Reviewer"
+                        md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+                      <span class="item-title">
+                        <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>
+                        <span> {{item.name}} </span>
+                      </span>
+                                    <span class="item-metadata">
+                        <span>
+                          <strong>{{item.email}}</strong>
+                        </span>
+                      </span>
+                    </md-item-template>
+                </md-autocomplete>
+                </div>
+                <div layout-gt-sm="row" ng-show="false">
+                    <md-input-container class="md-block">
+                        <label>Reviewer</label>
+                        <md-select ng-model="survey.contacts" placeholder="Select a Reviewer">
+                            <md-option ng-value="opt.id" ng-repeat="opt in customerContacts">{{ opt.name }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row" flex-auto="" style="padding-top: 10px">
+
+                    <md-list ng-show="customerEmployees.length > 0" style="border:1px solid lightgrey; max-height:130px; overflow:scroll" >
+                        <md-list-item   class="md-2-line" ng-repeat="employee in customerEmployees">
+                            <img ng-src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" class="md-avatar">
+                            <md-checkbox ng-model="survey.employees"></md-checkbox>
+                            <div class="md-list-item-text">
+                                <h3>{{employee.email}}</h3>
+                                <p>{{employee.name}} {{employee.designation}}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+                <div layout-gt-sm="row">
+
+                    <md-datepicker ng-model="survey.startDate" md-placeholder="Start date"
+                                   md-min-date="survey.minDate" md-max-date="survey.maxDate"></md-datepicker>
+
+                    <md-datepicker ng-model="survey.endDate" md-placeholder="End date"
+                                   md-min-date="survey.minDate" md-max-date="survey.maxDate"></md-datepicker>
+
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                            <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                                code.
+                            </div>
+                            <div ng-message="md-maxlength" class="my-message">
+                                Don't use the long version silly...we don't need to be that specific...
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-click="submitForm()" class="md-raised md-primary">Publish</md-button>
+                        <md-button ng-click="submitForm()" class="md-raised md-primary">Save as Draft</md-button>
+                    </md-card-actions>
+                </div>
+         </div>
+            </form>
+
+        </md-card-content>
+
+</div>
