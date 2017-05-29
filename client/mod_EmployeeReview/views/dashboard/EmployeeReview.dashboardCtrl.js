@@ -59,6 +59,7 @@ angular.module('mod.m161')
     init();
 
     $scope.addSurvey = function(event){
+        $scope.survey = {};
         $mdDialog.show({
             controller: function($scope, $mdDialog, SessionService, SurveyService, AlertService) {
                 $scope.closeDialog = function() {

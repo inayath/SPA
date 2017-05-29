@@ -30,7 +30,7 @@ angular.module('mod.m161')
         $scope.survey = {name:'Care QA Team Survey'};
 
         $scope.querySearch = function(query) {
-            var results = query ? $scope.customerContacts.filter( createFilterFor(query) ) : $scope.customerContacts,
+            var results = query && $scope.customerContacts > 0 ? $scope.customerContacts.filter( createFilterFor(query) ) : $scope.customerContacts,
                 deferred;
             if (self.simulateQuery) {
                 deferred = $q.defer();
@@ -47,9 +47,12 @@ angular.module('mod.m161')
             var lowercaseQuery = angular.lowercase(query);
 
             return function filterFn(item) {
-                return (item.value.indexOf(lowercaseQuery) === 0);
+                return (item.name.indexOf(lowercaseQuery) === 0);
             };
 
+        }
+        $scope.selectedEmployees = function () {
+            $scope.survey.employess = $filter('filter')($scope.customerEmployees, {checked: true});
         }
 
 

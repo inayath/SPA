@@ -11,7 +11,7 @@
         <form name="userForm">
             <div layout="column">
 
-                <div layout-gt-sm="row">
+                <div >
                     <md-input-container class="md-block md-input-invalid">
                         <label>Clients</label>
                         <md-select ng-change="getCustomerData()" ng-model="survey.customer" placeholder="Select a Client">
@@ -19,7 +19,7 @@
                         </md-select>
                     </md-input-container>
                 </div>
-                <div layout-gt-sm="row">
+                <div >
                 <md-autocomplete
                         ng-disabled="ctrl.isDisabled"
                         md-no-cache="ctrl.noCache"
@@ -51,12 +51,12 @@
                         </md-select>
                     </md-input-container>
                 </div>
-                <div layout-gt-sm="row" flex-auto="" style="padding-top: 10px">
+                <div  style="padding-top: 15px">
 
                     <md-list ng-show="customerEmployees.length > 0" style="border:1px solid lightgrey; max-height:130px; overflow:scroll" >
                         <md-list-item   class="md-2-line" ng-repeat="employee in customerEmployees">
                             <img ng-src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" class="md-avatar">
-                            <md-checkbox ng-model="survey.employees"></md-checkbox>
+                            <md-checkbox name="{{employee.email}}" id="{{employee.email}}" ng-model="employee.checked" ng-change="selectedEmployees()"></md-checkbox>
                             <div class="md-list-item-text">
                                 <h3>{{employee.email}}</h3>
                                 <p>{{employee.name}} {{employee.designation}}</p>
@@ -64,7 +64,7 @@
                         </md-list-item>
                     </md-list>
                 </div>
-                <div layout-gt-sm="row">
+                <div>
 
                     <md-datepicker ng-model="survey.startDate" md-placeholder="Start date"
                                    md-min-date="survey.minDate" md-max-date="survey.maxDate"></md-datepicker>
